@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Personal Website</title>
+    <style>
+        :root {
+            --background-color: #f4f4f9;
+            --text-color: #333;
+            --link-color: #0066cc;
+            --header-background: #333;
+            --header-text-color: #fff;
+            --footer-background: #333;
+            --footer-text-color: #fff;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        header {
+            background-color: var(--header-background);
+            color: var(--header-text-color);
+            padding: 1rem;
+            text-align: center;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #444;
+            padding: 0.5rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 0.75rem 1rem;
+            margin: 0 0.5rem;
+        }
+
+        nav a:hover {
+            background-color: #666;
+            border-radius: 4px;
+        }
+
+        section {
+            padding: 2rem;
+            max-width: 800px;
+            margin: 1rem auto;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+
+        h2 {
+            color: var(--text-color);
+        }
+
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background-color: var(--footer-background);
+            color: var(--footer-text-color);
+            position: relative;
+            width: 100%;
+            bottom: 0;
+        }
+
+        .dark-mode {
+            --background-color: #333;
+            --text-color: #f4f4f9;
+            --link-color: #0099ff;
+            --header-background: #444;
+            --footer-background: #444;
+        }
+
+        .comments {
+            margin-top: 2rem;
+        }
+
+        .toggle-dark-mode {
+            cursor: pointer;
+            background-color: transparent;
+            border: 1px solid var(--text-color);
+            padding: 0.5rem 1rem;
+            color: var(--text-color);
+            margin: 1rem 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Welcome to My Personal Website</h1>
+        <button class="toggle-dark-mode" onclick="toggleDarkMode()">Toggle Dark Mode</button>
+    </header>
+
+    <nav>
+        <a href="#homepage">Homepage</a>
+        <a href="#aboutme">About Me</a>
+        <a href="#blog">Blog/News</a>
+        <a href="#contact">Contact</a>
+        <a href="#comments">Comments</a>
+    </nav>
+
+    <section id="homepage">
+        <h2>Homepage</h2>
+        <p>Welcome to my personal website! Here you can find information about my life, thoughts, and experiences. Feel free to explore the various sections to learn more about me and share your comments.</p>
+    </section>
+
+    <section id="aboutme">
+        <h2>About Me</h2>
+        <p>Hi! I'm [Your Name]. I'm currently [Your Background or Profession]. I enjoy [Your Interests]. This website is a space for me to share updates about my life and connect with others.</p>
+    </section>
+
+    <section id="blog">
+        <h2>Blog/News Section</h2>
+        <p>Check back regularly for updates on my life. Here I'll post news, thoughts, and interesting experiences I want to share.</p>
+        <div>
+            <h3>Latest Posts</h3>
+            <ul>
+                <li><strong>Post Title 1</strong> - Brief description of the post.</li>
+                <li><strong>Post Title 2</strong> - Brief description of the post.</li>
+                <li><strong>Post Title 3</strong> - Brief description of the post.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Page</h2>
+        <p>If you would like to get in touch, feel free to reach out to me via email at <a href="mailto:youremail@example.com">youremail@example.com</a>.</p>
+    </section>
+
+    <section id="comments" class="comments">
+        <h2>Comments Section</h2>
+        <p>Leave your comments or thoughts below:</p>
+        <!-- Include Disqus or another comments system here -->
+        <div id="disqus_thread"></div>
+        <script>
+            var disqus_config = function () {
+                this.page.url = window.location.href;  // Replace with your page's canonical URL variable
+                this.page.identifier = document.title; // Replace with your page's unique identifier variable
+            };
+
+            (function() { // DON'T EDIT BELOW THIS LINE
+                var d = document, s = d.createElement('script');
+                s.src = 'https://YOUR_DISQUS_SHORTNAME.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 My Personal Website</p>
+    </footer>
+
+    <script>
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+        }
+    </script>
+
+</body>
+</html>
+git --version
